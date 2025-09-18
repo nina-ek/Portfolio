@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -13,11 +14,13 @@ body{
 
 .body{
 
-    margin: 0%;
+    margin: 0;
+    padding: 0;
     /* padding: 1em; */
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to bottom, #55CADC, #EF58B2);
+    position: relative;
 
 }
 
@@ -46,13 +49,25 @@ h1{
 footer{
 
     background-color: gray;
-    padding: 1vw;
-    height: 10vh;
+    padding: 1em;
+    /* height: 10vh; */
     width: 100vw;
     position: fixed;
     bottom: 0;
 }
 
+
+.content{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* gap: 20px; */
+    /* height: 86vh; */
+    padding-bottom: 5em;
+    padding-top: 1em;
+}
 
 .box1{
 
@@ -68,6 +83,26 @@ footer{
 
 }
 
+.box2{
+    width: 20vw;
+    height: 40vh;
+    background-color: white;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 10px;
+    border: 15px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+    
+}
+
+.sidebar-links{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .sidebarcontent{
 
@@ -110,6 +145,12 @@ a{
 
 .sidebar.offcanvas.active {
     left: 0;
+}
+
+img{
+    
+    display: flex;
+    justify-content: center;
 }
 
 
