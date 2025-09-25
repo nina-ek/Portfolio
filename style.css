@@ -12,37 +12,56 @@ body{
     padding: 0em;
     margin: 0em;
     overflow-x: hidden;
-
+    /* scroll-behavior:smooth; */
+    /* position: relative; */
 }
 
-.body{
-
+.section{
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 200vh;
-    background: linear-gradient(to bottom, #55CADC, #EF58B2);
-    /* z-index: -1; */
+    height: 120vh;
+    z-index: -10;
+    position: relative;
 
 }
 
-/* #region Body Colors */
-#body-color1{
+/* #region section colors */
+#section-color0{
+    background: linear-gradient(to bottom, #55CADC, #EF58B2);
+}
+.section-color0{
+    background: linear-gradient(to bottom, #55CADC, #EF58B2);
+}
+
+#section-color1{
+    background: linear-gradient(to bottom, #EF58B2, #3f538a);
+}
+.section-color1{
     background: linear-gradient(to bottom, #EF58B2, #3f538a);
 }
 
-#body-color2{
+#section-color2{
+    background: linear-gradient(to bottom, #3f538a, #871d1d);
+}
+.section-color2{
     background: linear-gradient(to bottom, #3f538a, #871d1d);
 }
 
-#body-color3{
+#section-color3{
+    background: linear-gradient(to bottom, #941919, #08237b);
+}
+.section-color3{
     background: linear-gradient(to bottom, #941919, #08237b);
 }
 
-#body-color4{
+#section-color4{
     background: linear-gradient(to bottom, #08237b, #078e26);
 }
-/* #endregion */
+.section-color4{
+    background: linear-gradient(to bottom, #08237b, #078e26);
+}
+/* #endregion section colors */
 
 .header{
 
@@ -51,12 +70,44 @@ body{
     height: 4em;
     width: 100%;
     position: sticky;
-    top: 0;
-    z-index: 100; /* Make sure it's above backgrounds */
+    top:0;
+    margin-top: 0px;
+    z-index: 100; 
     
     display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+}
+.subsection-header{
+    background-color: #353535;
+    padding: 1vw;
+    height: 3em;
+    width: 100%;
+    position: sticky;
+    top:4em;
+    margin-top: 0px;
+    z-index: 100; 
+    border: 2px solid #232323;
+    
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+button{
+    /* display:block; */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    /* position:sticky; */
+    position: fixed;
+    left: 0.2em;
+    top: 0.2em;
+    z-index: 1000;
+    height: 0;
+    float: top;
 }
 
 h1{
@@ -73,139 +124,171 @@ footer{
     padding: 1em;
     /* height: 10vh; */
     width: 100vw;
-    position: fixed;
+    /* position: absolute; */
     bottom: 0;
+    z-index: 10000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
 .content{
 
-    position: relative;
+    /* position: relative; */
     display: flex;
         justify-content: center;
         align-items: center;
-    flex-direction: row;
+    /* flex-direction: row; */
+    background-color: #353535;
+    /* background-color: #078e26; */
     /* gap: 20px; */
     /* height: 86vh; */
-    /* padding-bottom: 5em;
-    padding-top: 1em; */
+    padding:2em
 
 }
 
 .box1{
 
-    width: 50vw;
+    width: 80%;
     height: auto;
     background-color: white;
     margin: auto;
     margin-top: 5vh;
     border-radius: 10px;
     border: 15px solid #353535;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     padding: 20px;
 
 }
-
+/* smaller box */
 .box2{
-    width: 20vw;
-    height: 40vh;
+    width: 23%;
+    height: auto;
     background-color: white;
     margin: auto;
-    margin-top: 5vh;
+    
     border-radius: 10px;
     border: 15px solid #353535;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-
 }
 
-/* #region Sidebar */
-.sidebar-links{
-    margin-top: 30px;
-    display: flex;
-        flex-direction: column;
-    gap: 20px;
+.content-links{
+    color: #232323;
 }
 
-.sidebarcontent{
-
-    display: flex;
-        flex-direction: column;
-    gap: 20px;
-    margin-top: 50px;
-
-}
-
-a{ 
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-
-
+/* #region sidebaren */
+/* Sidebaren*/
 .sidebar-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1000;
+  position: fixed; 
+  top: 0; left: 0;
+  width: 100vw; height: 100vh; 
+  background: rgba(0,0,0,0.5); 
+  opacity: 0;
+  pointer-events: none;      /* Can't be clicked when hidden */
+  transition: opacity 0.3s;  /* Fades in/out smoothly */
+  z-index: 2000;  
 }
-
-.sidebar.offcanvas {
-    position: fixed;
-    top: 0; left: -300px;
-
-    width: 300px;
-    height: 100%;
-    background: #353535;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-    transition: left 0.3s;
-    padding: 20px;
-}
-
 .sidebar-overlay.active {
-    display: block;
+  opacity: 1;
+  pointer-events: auto;      /* Can be clicked when active */
 }
 
+/* Sidebar Offcanvas */
+.sidebar.offcanvas {
+  position: fixed;           /* Sidebar is fixed to the viewport */
+  top: 0; left: -250px;      /* Starts hidden to the left of the screen */
+  width: 250px;
+  height: 100vh;
+  background: #232323;       
+  transition: left 0.3s cubic-bezier(.77,0,.18,1); /* Slides in/out smoothly */
+  z-index: 2100;
+  padding: 2em 1em;          /* Inner spacing */
+  border-top-right-radius: 18px;   
+  border-bottom-right-radius: 18px;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.25); 
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
 .sidebar.offcanvas.active {
+  left: 0;                   /* Moves sidebar into view */
+}
+.close-sidebar {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  left: 0.3em;
+}
+
+.sidebar{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#links, #links a{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-start;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#sublinks a{
+    gap: 0.5em;
+    margin-left: 1em;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#links a:hover{
+    color: #EF58B2;
+}
+a:hover{
+    color: #EF58B2;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* #endregion sidebaren */
+
+
+/* bakgrund bilder */
+.cloud{
+    position: absolute;
+    width: 90vw;
+    left: 1vw;
+    opacity: 0.7;
+    z-index: -1;
+}
+.star{
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    z-index: -1;
+    top: 0;
     left: 0;
 }
 
-/* #endregion */
+/* w3schools example */
+.parallax {
+  /* The image used */
+  background-image: url("Group 1.png");
 
-.parallax-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0; /* Behind everything */
-    /* overflow: hidden; */
+  /* Set a specific height */
+  min-height: 60vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.parallax.layer {
-    position: absolute;
-    width: 120vw; /* Slightly larger for movement */
-    left: 50%;
-    /* top: 0;
-    transform: translateX(-50%);
-    will-change: transform; */
-    pointer-events: none;
-}
-
-.parallax.stars {
-    /* z-index: 1; */
-    width: 80vw;
-    height: 80vh;
-    /* top: 0; */
-}
-
-.parallax.clouds {
-    /* z-index: 2; */
-    /* top: 0; */
-    opacity: 0.7;
-    /* width: 130vw; */
-    height: auto;
-}
-
