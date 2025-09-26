@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
 }
 
 html {
@@ -20,49 +21,64 @@ body{
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 120vh;
+
+    height:auto;
+
     z-index: -10;
+
     position: relative;
 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
+
 /* #region section colors */
-#section-color0{
-    background: linear-gradient(to bottom, #55CADC, #EF58B2);
-}
 .section-color0{
     background: linear-gradient(to bottom, #55CADC, #EF58B2);
 }
 
-#section-color1{
-    background: linear-gradient(to bottom, #EF58B2, #3f538a);
-}
 .section-color1{
     background: linear-gradient(to bottom, #EF58B2, #3f538a);
 }
 
-#section-color2{
-    background: linear-gradient(to bottom, #3f538a, #871d1d);
-}
 .section-color2{
-    background: linear-gradient(to bottom, #3f538a, #871d1d);
+    background: linear-gradient(to bottom, #3f538a, #9d1ea4);
 }
 
-#section-color3{
-    background: linear-gradient(to bottom, #941919, #08237b);
-}
 .section-color3{
-    background: linear-gradient(to bottom, #941919, #08237b);
+    background: linear-gradient(to bottom, #9b1c94, #ff25de);
 }
 
-#section-color4{
-    background: linear-gradient(to bottom, #08237b, #078e26);
-}
 .section-color4{
-    background: linear-gradient(to bottom, #08237b, #078e26);
+    background: linear-gradient(to bottom, #ff25de, #2e3492);
+}
+/* 078e26   green*/
+.section-color5{
+    background: linear-gradient(to bottom, #7b086e, #180d8a);
+}
+
+.section-color6{
+    background: linear-gradient(to bottom, #412485, #7e1d38);
+}
+
+.section-color7{
+    background: linear-gradient(to bottom, #7e1d38, #eab93c);
+}
+.section-color8{
+    background: linear-gradient(to bottom, #eab93c,#078e26);
+}
+.section-color9{
+    background: linear-gradient(to bottom,#180d8a, #078e26);
+}
+
+.section-color10{
+    background: linear-gradient(to bottom, #078e26,#180d8a);
 }
 /* #endregion section colors */
 
+/* #region headers and things */
 .header{
 
     background-color: #353535;
@@ -115,7 +131,31 @@ h1{
     color: white;
     margin: 0;
     padding: 0;
+    font-size: 2.5rem;
 
+}
+
+h2{
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.h2{
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+/* .h2 a:hover{
+    color: #EF58B2;
+
+} */
+
+p{
+    font-size: 1.1rem;
 }
 
 footer{
@@ -129,6 +169,8 @@ footer{
     z-index: 10000;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* #endregion */
 
 
 .content{
@@ -151,18 +193,19 @@ footer{
     width: 80%;
     height: auto;
     background-color: white;
-    margin: auto;
-    margin-top: 5vh;
+    margin: 3em;
     border-radius: 10px;
     border: 15px solid #353535;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 2em;
+
+    align-self: center;
 
 }
 /* smaller box */
 .box2{
     width: 23%;
-    height: auto;
+    height: 10rem;
     background-color: white;
     margin: auto;
     
@@ -193,7 +236,6 @@ footer{
   pointer-events: auto;      /* Can be clicked when active */
 }
 
-/* Sidebar Offcanvas */
 .sidebar.offcanvas {
   position: fixed;           /* Sidebar is fixed to the viewport */
   top: 0; left: -250px;      /* Starts hidden to the left of the screen */
@@ -209,6 +251,7 @@ footer{
   display: flex;
   flex-direction: column;
   gap: 2em;
+  overflow-y: auto;
 }
 .sidebar.offcanvas.active {
   left: 0;                   /* Moves sidebar into view */
@@ -260,35 +303,27 @@ a{
 
 /* #endregion sidebaren */
 
-
 /* bakgrund bilder */
-.cloud{
+
+.bgimg{
     position: absolute;
+
+
+}
+.cloud{
+    /* position: absolute; */
     width: 90vw;
     left: 1vw;
     opacity: 0.7;
     z-index: -1;
 }
 .star{
-    position: absolute;
+    /* position: absolute; */
     width: 100vw;
-    height: 120vh;
+    height: auto;
     z-index: -1;
     top: 0;
     left: 0;
 }
 
-/* w3schools example */
-.parallax {
-  /* The image used */
-  background-image: url("Group 1.png");
 
-  /* Set a specific height */
-  min-height: 60vh; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
